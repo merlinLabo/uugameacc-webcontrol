@@ -1,0 +1,14 @@
+[Unit]
+Description=UU GameAcc control API
+After=uuplugin.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node24 /data/uuplugin-webcontrol/uu-control.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
